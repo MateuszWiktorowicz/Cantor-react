@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4e440546.chunk.css",
+    "main.js": "/static/js/main.133adbdc.chunk.js",
+    "main.js.map": "/static/js/main.133adbdc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f64a7bb2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f64a7bb2.js.map",
+    "static/js/2.9f4bad3d.chunk.js": "/static/js/2.9f4bad3d.chunk.js",
+    "static/js/2.9f4bad3d.chunk.js.map": "/static/js/2.9f4bad3d.chunk.js.map",
+    "static/js/3.83683136.chunk.js": "/static/js/3.83683136.chunk.js",
+    "static/js/3.83683136.chunk.js.map": "/static/js/3.83683136.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.4e440546.chunk.css.map": "/static/css/main.4e440546.chunk.css.map",
+    "static/js/2.9f4bad3d.chunk.js.LICENSE.txt": "/static/js/2.9f4bad3d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/laptop.5deaf20e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f64a7bb2.js",
+    "static/js/2.9f4bad3d.chunk.js",
+    "static/css/main.4e440546.chunk.css",
+    "static/js/main.133adbdc.chunk.js"
+  ]
+}
