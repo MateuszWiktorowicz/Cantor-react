@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { currencies } from '../currencies';
+import { Result } from './Result';
+import "./index.css";
 
 export const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -24,20 +26,20 @@ export const Form = ({ calculateResult, result }) => {
                                 Waluta:
                             </span>
                             <select
-                            value={currency}
-                            onChange = {({target}) => setCurrency(target.value)}
+                                value={currency}
+                                onChange={({ target }) => setCurrency(target.value)}
                                 className="form__field js-currency"
                                 name="currency"
 
                             >
-                               {currencies.map((currency => (
-                                   <option
-                                   key={currency.short}
-                                   value={currency.short}
-                                   >
-                                       {currency.name}
-                                   </option>
-                               )))}
+                                {currencies.map((currency => (
+                                    <option
+                                        key={currency.short}
+                                        value={currency.short}
+                                    >
+                                        {currency.name}
+                                    </option>
+                                )))}
                             </select>
 
                         </label>
@@ -64,8 +66,9 @@ export const Form = ({ calculateResult, result }) => {
             </form>
 
             <div className="form__labelText">
-                Otrzymujesz: <span className="js-exchange">N/A </span>
-
+                <Result
+                    result={result}
+                />
             </div>
         </div>
     )
