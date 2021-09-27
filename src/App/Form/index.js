@@ -1,7 +1,40 @@
 import React, { useState } from "react";
 import { currencies } from '../currencies';
 import { Result } from './Result';
-import "./index.css";
+import styled from "styled-components"
+
+const Button = styled.button`
+  margin: 10px auto;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: hsl(88, 77%, 35%);
+    color: white;
+    display: block;
+    max-width: 400px;
+    width: 100%;
+
+    &:hover {
+        background-color: hsl(88, 77%, 40%);
+    }
+
+    &:active {
+        background-color: hsl(88, 77%, 45%)
+    }
+`;
+
+const Fieldset = styled.fieldset`
+ padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+`;
+
+const Legend = styled.legend`
+   border: 1px solid #ccc;
+    padding: 3px;
+    border-radius: 3px;
+    color: cornsilk;
+`;
 
 export const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -12,23 +45,37 @@ export const Form = ({ calculateResult, result }) => {
         calculateResult(currency, amount);
 
     };
+const Select = styled.select`
+   border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    max-width: 200px;
+    width: 100%;
+    `;
 
+    const FormText = styled.span`
+        width: 140px;
+    display: inline-block;
+    margin: 0 5px;
+    color: cornsilk;`;
+
+    
 
     return (
         <div>
             <form onSubmit={onSubmit} className="form js-form">
-                <fieldset className="form__fieldset">
-                    <legend className="form__legend">Kalkulator wymiany waluty</legend>
+                <Fieldset>
+                    <Legend>Kalkulator wymiany waluty</Legend>
                     <p>
                         <label>
 
-                            <span className="form__labelText">
+                            <FormText>
                                 Waluta:
-                            </span>
-                            <select
+                            </FormText>
+                            <Select
                                 value={currency}
                                 onChange={({ target }) => setCurrency(target.value)}
-                                className="form__field js-currency"
+                            
                                 name="currency"
 
                             >
@@ -40,36 +87,34 @@ export const Form = ({ calculateResult, result }) => {
                                         {currency.name}
                                     </option>
                                 )))}
-                            </select>
+                            </Select>
 
                         </label>
                     </p>
                     <p>
                         <label>
-                            <span className="form__labelText">
+                            <FormText>
                                 Wpłacasz (PLN):
-                            </span>
+                            </FormText>
                             <input
                                 value={amount}
                                 onChange={({ target }) => setAmount(target.value)}
-                                className="form__field js-payment"
+                               
                                 type="number"
                                 required min="0" step="0.01" />
                         </label>
                     </p>
-                </fieldset>
-                <button
-                    className="form__button"
-                >
+                </Fieldset>
+                <Button>
                     Oblicz
-                </button>
+                </Button>
             </form>
 
-            <div className="form__labelText">
+            <FormText>
                 <Result
                     result={result}
                 />
-            </div>
+            </FormText>
         </div>
     )
 }

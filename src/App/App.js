@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Form } from './Form';
 import { currencies } from './currencies';
-import "./index.css";
-import  { Clock }  from "./Clock";
+import { Clock } from "./Clock";
+import styled from "styled-components"
 
+const Div = styled.div`
+
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+`;
 
 
 function App() {
@@ -18,7 +24,7 @@ function App() {
     setResult(
       {
         sourceAmount: +amount,
-        targetAmount: amount /rate,
+        targetAmount: amount / rate,
         currency,
       },
     );
@@ -27,14 +33,14 @@ function App() {
   };
 
   return (
-    <div className="cantorContainer">
+    <Div  >
       <Clock />
-      <Form 
-      result={result}
-      calculateResult={calculateResult}
+      <Form
+        result={result}
+        calculateResult={calculateResult}
       />
 
-    </div>
+    </Div>
   );
 }
 
